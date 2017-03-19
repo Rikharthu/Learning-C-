@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4084CABA-4E6F-4192-AE19-DD892B850B51}</ProjectGuid>
-    <RootNamespace>Pointers</RootNamespace>
+    <ProjectGuid>{4F4BEF9A-A1AA-4AB2-A6F6-20C1394ADAF8}</ProjectGuid>
+    <RootNamespace>BitMath</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
