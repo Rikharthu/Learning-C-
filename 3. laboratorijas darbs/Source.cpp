@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cstdio>
 #include <string>
 #include "Car.h"
@@ -109,6 +109,7 @@ void main(void) {
 	Car * nissan = new Car("FO-3390", 2006, "Japan", 1550);
 	Car unixCar = Car();
 
+	cout << "Nissan arrived" << endl;
 	try {
 		park->ParkCar(nissan);
 	}
@@ -129,10 +130,13 @@ void main(void) {
 	cout << "Current length: " << park->GetLength() << "." << endl;
 	park->Print();
 	cout << endl;
+
+	cout << "2 unix cars and 1 destroyed nissan drove by" << endl;
 	try {
 		park->ParkCar(unixCar);
 		park->ParkCar(unixCar);
 		// will throw ... exception
+		//? Почему работает?
 		park->ParkCar(nissan);
 	}
 	catch (OverflowException&) {
@@ -144,6 +148,8 @@ void main(void) {
 	}
 	park->Print();
 	cout << endl;
+	
+	cout << "2 more cars arrived." << endl;
 	try {
 		park->ParkCar(unixCar);
 		park->ParkCar(unixCar);
@@ -159,6 +165,7 @@ void main(void) {
 
 	park->Print();
 	cout << "Max power is " << park->GetMaxPower() << endl;
+	cout << "Car park is closing..." << endl;
 	delete park;
 
 	getchar();
