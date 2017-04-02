@@ -4,6 +4,7 @@
 #include	<string>
 #include "Complex.h"
 #include "Vect.h"
+#include "Triangle.h"
 using namespace std;
 
 
@@ -167,6 +168,20 @@ int main(int argc, char **argv)
 	v3 = v3 + 2000; // use overloaded +, i.e. v3.operator+(2000) and overloaded =
 	v3.print();
 
+	cout << "\n\nTriangle Demo:" << endl;
+	Triangle t1;
+	t1.setSize(3, 4, 5);
+	t1.print();
+
+	Triangle t2;	
+	t2 = t1 * 2;
+	t1.print();
+	t2.print();
+
+	t1++;
+	++t2;
+	t1.print();
+	t2.print();
 
 	getchar();
 	return 0;

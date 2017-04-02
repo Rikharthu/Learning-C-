@@ -19,6 +19,7 @@ public:
 	}
 	Complex(int real=0, int imaginary=0) :real(real), imaginary(imaginary) {}
 
+	// Overload + operator
 	Complex operator +(const Complex &rhs) const {
 		return Complex(real + rhs.getReal(), imaginary + rhs.getImaginary());
 	}
