@@ -3,6 +3,7 @@
 #include <iostream>
 #include	<string>
 #include "Complex.h"
+#include "Vect.h"
 using namespace std;
 
 
@@ -127,6 +128,45 @@ int main(int argc, char **argv)
 
 	float abs = irez.abs();
 	cout << "abs: " << abs << endl;
+
+
+	//++ Vect Demo
+	cout << "\nVect demo:" << endl;
+	Vect v1;
+	Vect v2(7);
+
+	int i;
+	for (i = 0; i < v1.getsize(); ++i) v1[i] = i + 100; // use overloaded [], i.e. v1.operator[](i) = i + 100;
+	v1.print(v1.getsize());
+
+	for (i = 0; i < v2.getsize(); ++i) v2[i] = i + 200; // use overloaded [], i.e. v2.operator[](i) = i + 200;
+	v2.print();
+
+	getchar();
+
+	int m[] = { 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+	Vect v3(m, 5);
+	v3.print();
+
+	v3 = v1;	// use overloaded assignment =, i.e. v3.operator=(v1);
+	v3.print();
+
+	getchar();
+
+	for (i = 0; i < 5; ++i) v3[i] = i;  	// use overloaded []
+
+	v3.print();
+
+	++v3;		// use overloaded ++, i.e. v3.operator++();
+	v3.print();
+
+	getchar();
+
+	v3 = 1000 + v3; // use overloaded +, i.e. operator+(1000, v3) and overloeded =
+	v3.print();
+	v3 = v3 + 2000; // use overloaded +, i.e. v3.operator+(2000) and overloaded =
+	v3.print();
+
 
 	getchar();
 	return 0;

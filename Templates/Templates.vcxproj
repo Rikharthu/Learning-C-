@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FD25BB0A-258A-48DD-96EE-509F222542EC}</ProjectGuid>
-    <RootNamespace>OperatorOverloading</RootNamespace>
+    <ProjectGuid>{61A4DA38-5BA7-4293-968C-0428382C0971}</ProjectGuid>
+    <RootNamespace>Templates</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,11 +111,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Vect.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Complex.h" />
-    <ClInclude Include="Vect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
