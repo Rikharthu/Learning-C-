@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cerrno>
+#include <ctime>
 
 // Standard Library namespace
 using namespace std;
@@ -172,7 +173,33 @@ int main(int argc, char **argv)
 	printf("errno is %d\n", errno);
 
 
+	// ----- DATE AND TIME -----
+	puts("\n\nDATE AND TIME\n");
 
+	const static size_t bufsize = 128;
+	// get current unix timestamp
+	time_t t = time(nullptr); // the current time
+
+	printf("On this system, size of time_t is %ld bits.\n", sizeof(time_t) * 8);
+
+	struct tm gmt = *gmtime(&t); // structured time in GMT
+	struct tm localt = *localtime(&t);
+
+	printf("direct from struct tm:\n");
+	printf("universal time is now %04d-%02d-%02d %02d:%02d:%02d\n",
+		gmt.tm_year + 1900, gmt.tm_mon + 1, gmt.tm_mday, gmt.tm_hour, gmt.tm_min, gmt.tm_sec);
+	printf("local time is now %04d-%02d-%02d %02d:%02d:%02d\n",
+		localt.tm_year + 1900, localt.tm_mon + 1, localt.tm_mday, localt.tm_hour, localt.tm_min, localt.tm_sec);
+
+	// Date formatting
+	char timeBuffer[bufsize]; // buffer for strftime
+
+	size_t len = strftime(timeBuffer, bufsize, "%Y-%m-%d %H:%M:%S", &gmt);
+	printf("from strftime(gmt):\n");
+	printf("universal time is now %s (%ld characters)\n", timeBuffer, len);
+	// local
+	len = strftime(timeBuffer, bufsize, "%Y-%m-%d %H:%M:%S", &localt);
+	printf("local time is now %s (%ld characters)\n", timeBuffer, len);
 
 	getchar();
 	return 0;
