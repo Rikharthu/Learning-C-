@@ -13,10 +13,15 @@ public:
 	~Stack();
 	bool push(int c);
 	bool push(int *cp, int n);
-	int pop() { 		
-		int i = s[top--];
-		cout << "pop " <<i<< endl;
-		return(i);
+	int pop() { 
+		if(!top==EMPTY){
+			int i = s[top--];
+			cout << "pop " <<i<< endl;
+			return(i);
+		}else{
+			// throw exception
+		}
+		
 	}
 	void reset() { top = EMPTY; }
 	int topOf() { return(s[top]); }
